@@ -1,0 +1,56 @@
+.myGigs {
+   width: 90%;
+   margin: 2rem auto;
+
+   .container {
+
+      .title {
+         display: flex;
+         justify-content: space-between;
+
+         h3 {
+            color: var(--grey-500);
+            font-weight: 700;
+         }
+
+         .btn {
+            padding: 0.8rem;
+         }
+      }
+
+      table {
+         width: 100%;
+
+         thead tr,
+         tr {
+            text-align: center;
+         }
+
+         .greyHeading {
+            background-color: var(--grey-200);
+         }
+
+         tbody {
+            tr {
+               & :first-child {
+                  height: 50px;
+                  aspect-ratio: 3/2;
+               }
+
+               td {
+                  .delete {
+                     height: 1.5rem;
+                     width: 1.5rem;
+                  }
+
+               }
+
+               &:nth-child(even) {
+                  background-color: #1dbf730f;
+               }
+            }
+         }
+
+      }
+   }
+}

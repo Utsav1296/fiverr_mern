@@ -1,0 +1,115 @@
+.footer {
+   color: var(--text-grey-900);
+   width: 100%;
+   overflow: hidden;
+
+   .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .top {
+         display: grid;
+         grid-template-columns: repeat(5, 1fr);
+         gap: 1rem;
+         padding: 0 3rem;
+
+         @media screen and (950px<width<=1150px) {
+            grid-template-columns: repeat(4, 1fr);
+         }
+
+         @media screen and (600px<width<=950px) {
+            grid-template-columns: repeat(3, 1fr);
+         }
+
+         @media screen and (350px<width<=600px) {
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+
+
+         .item {
+            display: flex;
+            flex-direction: column;
+
+            :nth-child(1) {
+               // background-color: var(--primary-50);
+               background-image: linear-gradient(45deg, #78af4251, #f3e5780f);
+               padding: 0.25rem 0.5rem;
+               border-radius: var(--borderRadius);
+            }
+         }
+      }
+
+      hr {
+         width: 90%;
+         height: 2px;
+         background-image: linear-gradient(to right, #003211, #0c401e, #194e2b, #255d39, #316c47, #367653, #3a815f, #3f8b6c, #3e9279, #3e9986, #409f93, #43a6a0);
+         border: none;
+
+      }
+
+      .bottom {
+         display: flex;
+         gap: 3rem;
+         width: 100%;
+         justify-content: space-between;
+         // background-color: red;
+         padding: 0.5rem 3rem;
+
+         @media screen and (max-width:950px) {
+            flex-direction: column;
+            gap: 0rem;
+         }
+
+         .left {
+            width: max-content;
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            span {
+               font-size: 13px;
+               white-space: nowrap;
+            }
+
+            h4 {
+               color: var(--grey-600);
+               font-weight: 600;
+            }
+
+            span {
+               color: var(--grey-400);
+               font-weight: 400;
+            }
+         }
+
+         .right {
+            width: max-content;
+            display: flex;
+            flex-wrap: wrap-reverse;
+            // display: none;
+            align-items: center;
+            gap: 1.8rem;
+
+            @media screen and (max-width:768px) {
+               width: 100%;
+            }
+
+            .social {
+               display: flex;
+               flex: 1;
+               gap: 1rem;
+            }
+
+            .link {
+               display: flex;
+               align-items: center;
+               gap: 10px;
+            }
+         }
+      }
+   }
+}

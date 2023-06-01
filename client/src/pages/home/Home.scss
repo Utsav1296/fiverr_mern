@@ -1,0 +1,128 @@
+.home {
+   .explore {
+      background-color: #0d084d;
+      background-color: #365314;
+
+      h2,
+      h4,
+      p {
+         color: rgb(255, 255, 255) !important;
+      }
+
+      h4 {
+         text-transform: none;
+      }
+
+      .title {
+         align-items: flex-start !important;
+
+         p {
+            text-align: left !important;
+         }
+      }
+
+      button {
+         // background-color: #1dbf73;
+         background-color: #4ade80;
+         padding: 0.75rem 1rem;
+         width: max-content;
+         border-radius: var(--borderRadius);
+         border: none;
+         font-size: 1rem;
+         cursor: pointer;
+
+         &:hover {
+            background-color: #22c55e;
+         }
+      }
+   }
+
+   .features {
+      background-color: var(--primary-50);
+   }
+
+   .features,
+   .explore {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      width: 90vw;
+      padding: 2rem;
+      border-radius: calc(4*var(--borderRadius));
+      box-shadow: var(--shadow-4);
+      margin: 0rem auto 2rem;
+
+      @media screen and (min-width:1292px) {
+         flex-direction: row;
+      }
+
+      .item {
+         display: flex;
+         flex-direction: column;
+         gap: 1rem;
+         align-items: space-evenly;
+         justify-content: center;
+
+         &:first-child {
+            flex: 2;
+         }
+
+         &:last-child {
+            flex: 3;
+         }
+
+         h2 {
+            color: var(--primary-900);
+            font-weight: 700;
+            word-wrap: wrap;
+         }
+
+         .title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--grey-500);
+
+            img {
+               width: 1.5rem;
+               height: 1.5rem;
+            }
+         }
+
+         p {
+            font-size: 18px;
+            font-weight: 300;
+            color: gray;
+            line-height: 1.125rem;
+            letter-spacing: 1px;
+         }
+
+         .itemCenter {
+            display: flex;
+            justify-content: center;
+
+            video,
+            img {
+               border-radius: 1.1rem;
+               width: 300px;
+
+               @media screen and (min-width:492px) {
+                  width: 460px;
+               }
+
+               @media screen and (min-width:768px) {
+                  width: 700px;
+               }
+            }
+
+            // img {
+            //    height: 300px;
+            // }
+         }
+      }
+   }
+}

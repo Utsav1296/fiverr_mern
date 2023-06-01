@@ -1,0 +1,64 @@
+  .review {
+     .user {
+        justify-content: start;
+        padding: 0.5rem 3rem 0.5rem 0.5rem;
+        width: max-content;
+
+        .pp {
+           width: 40px;
+           height: 40px;
+           object-fit: cover;
+           border-radius: 50%;
+        }
+
+        .info {
+           display: flex;
+           flex-direction: column;
+           gap: 0.5rem;
+
+           span {
+              color: var(--grey-900);
+              font-weight: 500;
+           }
+
+           // span {}
+
+           .country {
+              display: flex;
+              gap: 0.5rem;
+
+              img {
+                 height: 1.5rem;
+                 width: 1.5rem;
+              }
+           }
+        }
+     }
+
+     .stars {
+        img {
+           width: 1rem;
+           margin-right: 0.2rem;
+        }
+
+        span {
+           color: rgb(240, 204, 0);
+           font-weight: 800;
+        }
+     }
+
+     .helpful {
+        display: flex;
+        gap: 0.5rem;
+        align-items: baseline;
+
+        span {
+           color: var(--grey-700)
+        }
+
+        img {
+           height: 1.2rem;
+           border-radius: 30%;
+        }
+     }
+  }

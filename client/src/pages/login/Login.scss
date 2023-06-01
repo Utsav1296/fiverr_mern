@@ -1,0 +1,162 @@
+.login {
+   // height: 100vh;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: linear-gradient(to right top, #eca4976e, #ecdaaa63, #d2ecb559, #c0ecb56c, #b6eccb59, #baece950, #bfcfeb59, #c3caeb52, #d6bee962, #e4b2e649, #e1aad042, #d89cc436);
+   // filter:brightness(.5) hue-rotate(90deg);
+
+   .design {
+      position: relative;
+      // overflow: hidden;
+
+      .square {
+
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         bottom: 0px;
+         left: 90vw;
+
+         .design-square {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(238, 214, 206);
+            transform: rotateY(180deg) rotate(45deg);
+            // background-color: rgb(169, 194, 241);
+         }
+      }
+
+      .circle {
+         position: relative;
+         left: 10vw;
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         overflow: hidden;
+
+         .design-circle {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #d4f0d6;
+         }
+
+      }
+
+   }
+
+
+
+
+   .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80dvh;
+      width: max-content;
+      border-radius: calc(3 * var(--borderRadius));
+      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+
+      form {
+         width: 340px;
+         padding: 100px 0px;
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+
+
+         @media screen and (width<420px) {
+            width: 250px;
+         }
+
+         h4 {
+            text-align: center;
+            color: var(--grey-600);
+            margin-bottom: 20px;
+         }
+
+         label {
+            color: gray;
+            font-size: 18px;
+         }
+
+         input,
+         textarea {
+            padding: 20px;
+            border: 1px solid rgb(216, 214, 214);
+         }
+
+         .passwordBlock {
+            position: relative;
+
+            .passwordInput {
+               display: flex;
+               align-items: center;
+               justify-content: flex-start;
+               position: relative;
+               background: #ffffff;
+               width: 340px;
+
+               @media screen and (width<420px) {
+                  width: 250px;
+               }
+
+               #password {
+                  width: 100%;
+                  border-right: none;
+               }
+
+            }
+
+            .passwordToggler {
+               height: 1.5rem;
+               width: 1.5rem;
+               border-radius: 50%;
+               // background-color: #1dbf73;
+               position: relative;
+               top: -45px;
+               right: -300px;
+
+               @media screen and (width<420px) {
+                  position: relative;
+                  top: -45px;
+                  right: -210px;
+               }
+            }
+
+
+         }
+
+         button {
+            border: none;
+            padding: 20px;
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+            background-color: #1dbf73;
+            border-radius: calc(2 * var(--borderRadius));
+            cursor: pointer;
+         }
+
+         span {
+            color: red;
+            text-transform: capitalize;
+            font-weight: 600;
+            padding: 0.125rem 1rem;
+            background-color: rgba(240, 214, 214, 0.144);
+            font-size: 0.75rem;
+         }
+      }
+   }
+}
