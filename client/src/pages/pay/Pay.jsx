@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Pay.scss";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import newRequest from "../../utils/newRequest"
+import getCurrentUser from "../../utils/getCurrentUser";
 import axios from "axios";
 
 import { loadStripe } from "@stripe/stripe-js";
@@ -50,12 +51,26 @@ const Pay = () => {
 
    return (
       <div className="pay">
-         <h3>Hi there</h3>
-         {clientSecret && (
-            <Elements options={options} stripe={stripePromise}>
-               <CheckoutForm />
-            </Elements>
-         )}
+         {getCurrentUser() === null ? <div className="fallback">
+            <h3>You need to register and login first in order to do payment </h3>
+            <p>In case you want an Username and password for testing purpose, use the details mentioned below :</p>
+            <div className="testData">
+               <p><b>Buyer </b> <br /> <em>Username </em>  : <strong> Emily</strong> <br /> <em>Password </em>  :  <strong>pass@123</strong> </p>
+               <p><b>Seller </b> <br /> <em>Username </em>  : <strong>Laura smith </strong><br /> <em>Password </em>  : <strong>pass@123</strong> </p>
+            </div>
+            <div className="link">
+               <Link to="/register"><b>Register</b></Link><br />
+               <Link to="/login"> <b> Login</b></Link>
+            </div>
+         </div> :
+            (<div>
+               <h3>Powered by Stripe payment api :</h3>
+               {clientSecret && (
+                  <Elements options={options} stripe={stripePromise}>
+                     <CheckoutForm />
+                  </Elements>
+               )}
+            </div>)}
       </div>
    );
 }

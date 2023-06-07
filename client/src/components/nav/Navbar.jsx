@@ -70,7 +70,7 @@ const Navbar = () => {
                <span>Explore</span>
                <span>English</span>
                {!currentUser && (<Link to="/login" className='link'>Sign in</Link>)}
-               {!currentUser?.isSeller && (<span>Become a Seller</span>)}
+               {!currentUser?.isSeller && (<Link className='link' to="/register"> Become a Seller</Link>)}
                {!currentUser && (<button className="btn" onClick={() => navigate("/register")}>Join</button>)}
 
                {currentUser && (
@@ -115,23 +115,25 @@ const Navbar = () => {
             </div>
          </div>
          {/* on scroll items */}
-         {((active || (window.location.pathname !== "/")) && window.innerWidth >= 600) && (<>
-            <hr />
-            <div className="menu">
-               <span>Graphics & Design
-               </span>
-               <span>Video & Animation</span>
-               {/* <span>Writing & Translation</span> */}
-               <span>AI Services</span>
-               <span>Digital Marketing</span>
-               {/* <span>Music & Audio</span> */}
-               <span>Programming & Tech</span>
-               <span>Business</span>
-               {/* <span>Lifestyle</span> */}
-            </div>
-            <hr />
-         </>)}
-      </div>
+         {
+            ((active || (window.location.pathname !== "/")) && window.innerWidth >= 600) && (<>
+               <hr />
+               <div className="menu">
+                  <span>Graphics & Design
+                  </span>
+                  <span>Video & Animation</span>
+                  {/* <span>Writing & Translation</span> */}
+                  <span>AI Services</span>
+                  <span>Digital Marketing</span>
+                  {/* <span>Music & Audio</span> */}
+                  <span>Programming & Tech</span>
+                  <span>Business</span>
+                  {/* <span>Lifestyle</span> */}
+               </div>
+               <hr />
+            </>)
+         }
+      </div >
    )
 }
 
